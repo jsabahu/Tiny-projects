@@ -1,1 +1,1 @@
-![](https://github.com/jsabahu/Tiny-projects/CountingAlgorithmsComparison/figures/300_300_100_10.gif)
+![](https://github.com/jsabahu/Tiny-projects/blob/main/CountingAlgorithmsComparison/figures/300_300_100_10.gif)
