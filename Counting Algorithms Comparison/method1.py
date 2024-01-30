@@ -26,3 +26,7 @@ def method1(unsorted: list) -> (list, float):
     t1 = time.time() - t0
 
     return replist, t1
+
+if __name__ == "__main__":
+    numbers = [1,2,3,1,2,4]
+    print(method1(numbers))

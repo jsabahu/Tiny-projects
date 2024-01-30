@@ -25,3 +25,7 @@ def method3(unsorted: list) -> (list, float):
         numveces.append([x, counter])
     t1 = time.time() - t0
     return numveces, t1
+
+if __name__ == "__main__":
+    numbers = [1,2,3,1,2,4]
+    print(method3(numbers))

@@ -1,6 +1,7 @@
 from method1 import method1
 from method2 import method2
 from method3 import method3
+from methodNative import methodNative
 
 from random import randint
 from statistics import mean
@@ -59,6 +60,7 @@ def main():
     X1, Y1, Z1 = testMethod(listLength, listDomain, timesMean, step, method1) # results for method1
     X2, Y2, Z2 = testMethod(listLength, listDomain, timesMean, step, method2) # results for method2
     X3, Y3, Z3 = testMethod(listLength, listDomain, timesMean, step, method3) # results for method3
+    Xn, Yn, Zn = testMethod(listLength, listDomain, timesMean, step, methodNative) # results for method3
 
     # plot the results using a scatter-plane 3D plot with different colors for each method
 
@@ -74,6 +76,8 @@ def main():
     ax.scatter(X2, Y2, Z2, c='green', label='method 2')
     ax.plot_trisurf(X3, Y3, Z3, color='white', edgecolors='grey', alpha=0.5)
     ax.scatter(X3, Y3, Z3, c='blue', label='method 3')
+    ax.plot_trisurf(Xn, Yn, Zn, color='white', edgecolors='grey', alpha=0.5)
+    ax.scatter(Xn, Yn, Zn, c='black', label='method Native')
 
     angles = np.linspace(0,360,101)[:-1] # Take 100 angles between 0 and 360
     
