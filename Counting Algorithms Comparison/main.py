@@ -1,7 +1,7 @@
-from method1 import method1
-from method2 import method2
-from method3 import method3
-from methodNative import methodNative
+from methods.method1 import method1
+from methods.method2 import method2
+from methods.method3 import method3
+from methods.methodNative import methodNative
 
 from random import randint
 from statistics import mean
