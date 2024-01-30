@@ -2,31 +2,14 @@ from method1 import method1
 from method2 import method2
 from method3 import method3
 
-import time
-import sys
-
 from random import randint
 from statistics import mean
+import numpy as np
+
+from utils import progressbar
+from buildGif import rotanimate
 
 import matplotlib.pyplot as plt # import the matplotlib module for plotting
-
-def progressbar(it, prefix="", size=60, out=sys.stdout): # Python3.6+
-    '''https://stackoverflow.com/questions/3160699/python-progress-bar'''
-    count = len(it)
-    start = time.time()
-    def show(j):
-        x = int(size*j/count)
-        remaining = ((time.time() - start) / j) * (count - j)
-        
-        mins, sec = divmod(remaining, 60)
-        time_str = f"{int(mins):02}:{sec:05.2f}"
-        
-        print(f"{prefix}[{u'█'*x}{('.'*(size-x))}] {j}/{count} Est wait {time_str}", end='\r', file=out, flush=True)
-        
-    for i, item in enumerate(it):
-        yield item
-        show(i+1)
-    print("\n", flush=True, file=out)
 
 def testMethod(listLength: int, listDomain: int, timesMean: int, step: int, method):
 
@@ -65,8 +48,6 @@ def testMethod(listLength: int, listDomain: int, timesMean: int, step: int, meth
 
     return X, Y, Z
 
-
-
 def main():
     # define the parameters for the testMethod function
     listLength = 300 # the maximum length of the random lists
@@ -93,8 +74,11 @@ def main():
     ax.scatter(X2, Y2, Z2, c='green', label='method 2')
     ax.plot_trisurf(X3, Y3, Z3, color='white', edgecolors='grey', alpha=0.5)
     ax.scatter(X3, Y3, Z3, c='blue', label='method 3')
-    ax.legend() # show the legend
-    plt.show() # show the plot
+
+    angles = np.linspace(0,360,101)[:-1] # Take 100 angles between 0 and 360
+    
+    # create an animated gif (10ms between frames)
+    rotanimate(ax, angles,'movie.gif',delay=10)
     
 
 if __name__ == "__main__":
