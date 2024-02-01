@@ -4,18 +4,9 @@
 In this small python project we will see the performance of different counting algorithms within different lists of numbers. Below we will see the different methods used:
 
 ## Methods
+$${\color{red}Method 1}$$
+Test
 
-- ![#f03c15](Hola) `Method 1`
-- ![#c5f015](https://placehold.co/15x15/c5f015/c5f015.png) `#c5f015`
-- ![#1589F0](https://placehold.co/15x15/1589F0/1589F0.png) `#1589F0`
-
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
 
 - 
 
