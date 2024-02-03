@@ -1,9 +1,12 @@
 from methods.method1 import method1
 from methods.method2 import method2
 from methods.method3 import method3
-from methods.methodNative import methodNative
+from methods.method4 import method4
 
-from random import randint
+from methods.methodNative import methodNative
+from methods.methodNativeDict import methodNativeDict
+
+import random
 from statistics import mean
 import numpy as np
 
@@ -30,6 +33,8 @@ def testMethod(listLength: int, listDomain: int, timesMean: int, step: int, meth
     Y = [] #domainList
     Z = [] #samplingResultsList
 
+    random.seed(42) ### reset random numbers
+
     for length in progressbar(range(10, listLength, step), "Computing: ", 40):
 
         for rang in range(10, listDomain,step):
@@ -38,7 +43,7 @@ def testMethod(listLength: int, listDomain: int, timesMean: int, step: int, meth
             for i in range(timesMean):
                 numbers = []
                 for j in range(length):
-                    numbers.append(randint(0,rang))
+                    numbers.append(random.randint(0,rang))
 
                 _, t = method(numbers.copy())
                 m.append(t)
@@ -60,7 +65,9 @@ def main():
     X1, Y1, Z1 = testMethod(listLength, listDomain, timesMean, step, method1) # results for method1
     X2, Y2, Z2 = testMethod(listLength, listDomain, timesMean, step, method2) # results for method2
     X3, Y3, Z3 = testMethod(listLength, listDomain, timesMean, step, method3) # results for method3
-    Xn, Yn, Zn = testMethod(listLength, listDomain, timesMean, step, methodNative) # results for method3
+    X4, Y4, Z4 = testMethod(listLength, listDomain, timesMean, step, method4) # results for method4
+    Xn, Yn, Zn = testMethod(listLength, listDomain, timesMean, step, methodNative) # results for methodNative
+    Xnd, Ynd, Znd = testMethod(listLength, listDomain, timesMean, step, methodNativeDict) # results for methodNativeDict
 
     # plot the results using a scatter-plane 3D plot with different colors for each method
 
@@ -76,11 +83,15 @@ def main():
     ax.scatter(X2, Y2, Z2, c='green', label='method 2')
     ax.plot_trisurf(X3, Y3, Z3, color='white', edgecolors='grey', alpha=0.5)
     ax.scatter(X3, Y3, Z3, c='blue', label='method 3')
+    ax.plot_trisurf(X4, Y4, Z4, color='white', edgecolors='grey', alpha=0.5)
+    ax.scatter(X4, Y4, Z4, c='purple', label='method 4')
     ax.plot_trisurf(Xn, Yn, Zn, color='white', edgecolors='grey', alpha=0.5)
     ax.scatter(Xn, Yn, Zn, c='black', label='method Native')
+    ax.plot_trisurf(Xnd, Ynd, Znd, color='white', edgecolors='grey', alpha=0.5)
+    ax.scatter(Xnd, Ynd, Znd, c='yellow', label='method Native Dict')
 
     angles = np.linspace(0,360,101)[:-1] # Take 100 angles between 0 and 360
-    
+
     # create an animated gif (10ms between frames)
     rotanimate(ax, angles,'movie.gif',delay=10)
     
