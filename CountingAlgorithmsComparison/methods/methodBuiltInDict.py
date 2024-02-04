@@ -1,6 +1,6 @@
 import time
 
-def methodNativeDict(unsorted: list) -> (list, float):
+def methodBuiltInDict(unsorted: list) -> (list, float):
     '''
     Given an unsorted list of numbers, this function computes the frequency count of each unique element and returns a list of lists containing the unique elements along with their corresponding counts. 
     It uses a dictionary and the built-in function 'count'.

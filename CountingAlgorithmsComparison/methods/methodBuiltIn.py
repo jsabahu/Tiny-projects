@@ -1,6 +1,6 @@
 import time
 
-def methodNative(unsorted: list) -> (list, float):
+def methodBuiltIn(unsorted: list) -> (list, float):
     '''
     This function takes an unsorted list of numbers as input and returns a tuple of two elements as output. 
     The first element is a list of sublists, each containing a unique number from the input list and its frequency. 

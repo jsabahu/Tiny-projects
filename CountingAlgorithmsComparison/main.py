@@ -3,8 +3,8 @@ from methods.method2 import method2
 from methods.method3 import method3
 from methods.method4 import method4
 
-from methods.methodNative import methodNative
-from methods.methodNativeDict import methodNativeDict
+from methods.methodBuiltIn import methodBuiltIn
+from methods.methodBuiltInDict import methodBuiltInDict
 
 import random
 from statistics import mean
@@ -66,8 +66,8 @@ def main():
     X2, Y2, Z2 = testMethod(listLength, listDomain, timesMean, step, method2) # results for method2
     X3, Y3, Z3 = testMethod(listLength, listDomain, timesMean, step, method3) # results for method3
     X4, Y4, Z4 = testMethod(listLength, listDomain, timesMean, step, method4) # results for method4
-    Xn, Yn, Zn = testMethod(listLength, listDomain, timesMean, step, methodNative) # results for methodNative
-    Xnd, Ynd, Znd = testMethod(listLength, listDomain, timesMean, step, methodNativeDict) # results for methodNativeDict
+    Xn, Yn, Zn = testMethod(listLength, listDomain, timesMean, step, methodBuiltIn) # results for methodNative
+    Xnd, Ynd, Znd = testMethod(listLength, listDomain, timesMean, step, methodBuiltInDict) # results for methodNativeDict
 
     # plot the results using a scatter-plane 3D plot with different colors for each method
 
