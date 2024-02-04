@@ -13,16 +13,16 @@ We repeat this process until the list is empty.
 This second method uses a for loop to iterate through the list of numbers and counts the number of occurrences for each number. We use a "checked" list to avoid counting the same number more than once.
 
 - ![#1589F0](https://placehold.co/15x15/0000FF/0000FF.png) `Method 3`
+  This third method uses two nested for loops to iterate through the input list and the <em>'noduplis'</em> list, which stores the unique numbers from the input list. 
 
-- ![#1589F0](https://placehold.co/15x15/000000/000000.png) `Method 4`
-
-
+- ![#1589F0](https://placehold.co/15x15/000000/000000.png) `MethodNative`
+  The last method uses the built-in count function to count the occurrences of each number non checked before. 
 
 
 
 ## Acknowledgements
 
- - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [Python Data Structures](https://docs.python.org/3/tutorial/datastructures.html)
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
  - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
